@@ -5,7 +5,7 @@ prismaには [Fluent API](https://www.prisma.io/docs/orm/prisma-client/queries/r
 
 Fluent API　のメリットとして、[親のfindUniqueがイテレータで呼ばれていた場合クエリがバッチ処理される](https://www.prisma.io/docs/orm/prisma-client/queries/query-optimization-performance#solution-1-batching-queries-with-the-fluent-api)というものがある。これによって、記述としては1件ずつselectするようになっていてもクエリ発行回数が抑えられ、n+1を回避できる。
 
-ただし、　Fluent API　が適用できるクエリの前に　Fluent API　が適用できないクエリを発行してしまうと、全体にわたって　Fluent API が適用されなくなるという性質がある。このチュートリアルはそれを確認するものである。
+ただし、　Fluent API　が適用できるクエリの前に　Fluent API　が適用できないクエリを発行してしまうと、全体にわたって Fluent API が適用されなくなるという性質がある。このチュートリアルはそれを確認するものである。
 
 
 ## 準備
@@ -56,7 +56,7 @@ SELECT "public"."posts"."post_id", "public"."posts"."user_id", "public"."posts".
 
 1行目はループ外で発行された(usersを取得するための)selectで、2行目以降はループ内で発行されたselectである。
 
-2~3行目、 4~5行目はそれぞれ 1. と 2. の処理の結果である。user_idでの絞り込みがin句にまとめられ、n+1が回避されていることがわかる。  
+2-3行目、 4-5行目はそれぞれ 1. と 2. の処理の結果である。user_idでの絞り込みがin句にまとめられ、n+1が回避されていることがわかる。  
 一方で6行目以降はuser_idの数だけクエリが発行されており、n+1の形になっていることがわかる。
 
 `fluentSelectOK` では Promise.allで検証しているが、 `fluentSelectXact` の例のように prisma.$transaction などでも発火する場合がある。
