@@ -6,12 +6,13 @@ To prepare:
 ```bash
 bun install
 bun prisma generate
+cp .env.sample .env
+createdb prisma_demo
+bun prisma migrate reset
 ```
 
 To run:
 ```bash
-cp .env.sample .env
-bun prisma migrate reset
 bun run src/index.ts
 ```
 
