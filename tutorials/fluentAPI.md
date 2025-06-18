@@ -11,13 +11,13 @@ Fluent API　のメリットとして、[親のfindUniqueがイテレータで�
 ## 準備
 データを整備する。
 ```
-bun run src/resetData.ts
+bun run src/scenario/resetData.ts
 ```
 
 ## Fluent API が適用される例
 まずは適用されるクエリを実行する。
 ```
-bun run src/fluentSelectOK.ts
+bun run src/scenario/fluentSelectOK.ts
 ```
 
 `fluentSelectOK` では、取得したユーザーごとに以下のようなクエリが発行される。
@@ -64,7 +64,7 @@ SELECT "public"."posts"."post_id", "public"."posts"."user_id", "public"."posts".
 ## Fluent API が適用されない例
 次に、適用されないクエリを実行する。
 ```
-bun run src/fluentSelectNG.ts
+bun run src/scenario/fluentSelectNG.ts
 ```
 
 `fluentSelectNG` では、取得したユーザーごとに以下のようなクエリが発行される。

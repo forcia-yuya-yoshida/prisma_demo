@@ -31,3 +31,7 @@ export async function fluentSelectXact() {
 		await client.$disconnect();
 	}
 }
+
+if (import.meta.main) {
+	await fluentSelectXact();
+}

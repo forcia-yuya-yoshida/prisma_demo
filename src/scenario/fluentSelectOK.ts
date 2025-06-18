@@ -27,3 +27,7 @@ export async function fluentSelectOK() {
 		await client.$disconnect();
 	}
 }
+
+if (import.meta.main) {
+	await fluentSelectOK();
+}

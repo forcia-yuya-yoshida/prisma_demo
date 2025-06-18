@@ -29,3 +29,7 @@ export async function fluentSelectNG() {
 		await client.$disconnect();
 	}
 }
+
+if (import.meta.main) {
+	await fluentSelectNG();
+}

@@ -28,3 +28,7 @@ export async function resetData() {
 		await client.$disconnect();
 	}
 }
+
+if (import.meta.main) {
+	await resetData();
+}

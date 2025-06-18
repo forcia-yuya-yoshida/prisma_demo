@@ -4,13 +4,13 @@ import { fluentSelectXact } from "./scenario/fluentSelectXact";
 import { resetData } from "./scenario/resetData";
 
 // データをリセット
-console.log("resetData");
+console.log("----------resetData----------");
 await resetData();
 
 // fluentAPIの挙動確認
-console.log("fluentSelectOK");
+console.log("----------fluentSelectOK----------");
 await fluentSelectOK();
-console.log("fluentSelectNG");
+console.log("----------fluentSelectNG----------");
 await fluentSelectNG();
-console.log("fluentSelectXact");
+console.log("----------fluentSelectXact----------");
 await fluentSelectXact();
