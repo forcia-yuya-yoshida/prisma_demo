@@ -1,4 +1,4 @@
-import client from "./prismaClient";
+import client from "../prismaClient";
 
 export async function resetData() {
 	try {
@@ -28,5 +28,3 @@ export async function resetData() {
 		await client.$disconnect();
 	}
 }
-
-await resetData();

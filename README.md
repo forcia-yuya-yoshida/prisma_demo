@@ -1,5 +1,5 @@
 # prisma-demo
-※DBは各自で用意してください
+※devcontainer環境を提供していますが、利用できない場合はbunとDBを各自で用意してください
 
 To prepare:
 

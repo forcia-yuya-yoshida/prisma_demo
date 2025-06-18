@@ -1,4 +1,4 @@
-import client from "./prismaClient";
+import client from "../prismaClient";
 
 export async function fluentSelectNG() {
 	try {
@@ -29,5 +29,3 @@ export async function fluentSelectNG() {
 		await client.$disconnect();
 	}
 }
-
-await fluentSelectNG();
