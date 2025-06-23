@@ -1,7 +1,7 @@
-import { fluentSelectNG } from "./fluentAPI/fluentSelectNG";
-import { fluentSelectOK } from "./fluentAPI/fluentSelectOK";
-import { fluentSelectXact } from "./fluentAPI/fluentSelectXact";
-import { resetData } from "./fluentAPI/resetData";
+import { fluentSelectNG } from "./fluentSelectNG";
+import { fluentSelectOK } from "./fluentSelectOK";
+import { fluentSelectXact } from "./fluentSelectXact";
+import { resetData } from "./resetData";
 
 // データをリセット
 console.log("----------resetData----------");
