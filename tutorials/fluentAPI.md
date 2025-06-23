@@ -1,5 +1,7 @@
 このチュートリアルは、prisma 6.7 + PostgreSQL 16.8 で動作確認をしています。
 
+devsemi チュートリアルで作成したテーブルを使用します。
+
 ## Fluent API について
 prismaには [Fluent API](https://www.prisma.io/docs/orm/prisma-client/queries/relation-queries#fluent-api) という機能があり、 `users.findUnique().posts()` のような記述で外部キーを張った子要素を取得することができる。
 
@@ -11,13 +13,13 @@ Fluent API　のメリットとして、[親のfindUniqueがイテレータで�
 ## 準備
 データを整備する。
 ```
-bun run src/scenario/resetData.ts
+bun run src/fluentAPI/resetData.ts
 ```
 
 ## Fluent API が適用される例
 まずは適用されるクエリを実行する。
 ```
-bun run src/scenario/fluentSelectOK.ts
+bun run src/fluentAPI/fluentSelectOK.ts
 ```
 
 `fluentSelectOK` では、取得したユーザーごとに以下のようなクエリが発行される。
@@ -64,7 +66,7 @@ SELECT "public"."posts"."post_id", "public"."posts"."user_id", "public"."posts".
 ## Fluent API が適用されない例
 次に、適用されないクエリを実行する。
 ```
-bun run src/scenario/fluentSelectNG.ts
+bun run src/fluentAPI/fluentSelectNG.ts
 ```
 
 `fluentSelectNG` では、取得したユーザーごとに以下のようなクエリが発行される。
