@@ -4,10 +4,8 @@
   - prisma client: typescriptのDBクライアント機能
 
 ## prismaの便利な点
-- prisma migrate
-  - DBの変更履歴を管理できる
 - prisma client
-  - DBのデータを型安全にtypescriptで表現できる
+  - DBのデータを型安全にtypescriptで表現できる ← これが一番大きい
   - 宣言的にクエリを書くことができる
     ```
   	const result1 = await client.users.findUnique({
@@ -26,7 +24,8 @@
   		},
   	});
     ```
-
+- prisma migrate
+  - DBの変更履歴を管理できる
 ## どうやって？
 - prismaは独自のDSLでDBを表現している(schema.prisma)
 - schema.prisma → DB (prisma migrate)

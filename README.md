@@ -5,7 +5,7 @@
 
 DBへの接続情報は .env(.sample) に記載されています。デフォルトでは `psql -h localhost -U postgres prisma_demo` で接続できる環境があればよいです。
 
-以下はdevsemi環境での動作確認コマンドです。
+以下はdevcontainer環境での動作確認コマンドです。
 
 ```bash
 bun install
