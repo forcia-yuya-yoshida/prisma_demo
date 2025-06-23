@@ -1,10 +1,31 @@
 ## prismaってなに
-- prisma migrate
-- prisma client
+- 主に2つの機能を提供する
+  - prisma migrate: 安全なデータベースマイグレーション機能
+  - prisma client: typescriptのDBクライアント機能
 
 ## prismaの便利な点
-- sqlを一切書くことなく、typescriptの世界でDB操作ができる
-- DBのデータ型をtypescriptで表現できる
+- prisma migrate
+  - DBの変更履歴を管理できる
+- prisma client
+  - DBのデータを型安全にtypescriptで表現できる
+  - 宣言的にクエリを書くことができる
+    ```
+  	const result1 = await client.users.findUnique({
+  		select: {
+  			user_id: true,
+  			name: true,
+  			users_detail: {
+  				select: {
+  					profile: true,
+  				},
+  			},
+  			posts: true,
+  		},
+  		where: {
+  			user_id: "nakanishi",
+  		},
+  	});
+    ```
 
 ## どうやって？
 - prismaは独自のDSLでDBを表現している(schema.prisma)
