@@ -41,7 +41,7 @@ usersとusers_detailは1対1
 posts: 投稿
 | 物理名 | 論理名 | 型 | ID |
 |-------------|------------|------|------|
-| `post_id` | ユーザーID | int | ○ |
+| `post_id` | ユーザーID | text | ○ |
 | `user_id` | ユーザーID | text |  |
 | `post` | 投稿 | text |  |
 usersとpostsは1対多
@@ -165,7 +165,7 @@ migrationに名前を付けろと言われるので、名前を付ける
 新しく生成されたmigration.sqlを確認する
 
 ### 注意
-- データによってエラーになるDDLを生成する場合は注意(非必須カラムを追加したいケースなど)
+- データによってエラーになるDDLを生成する場合は注意(必須カラムを追加したいケースなど)
 
 ## Prisma Client について
 まずはschema.prismaから型定義を作る
